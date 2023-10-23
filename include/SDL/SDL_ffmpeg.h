@@ -213,9 +213,9 @@ typedef struct
 } SDL_ffmpegFile;
 
 /* error handling */
-EXPORT const char* SDL_ffmpegGetError();
+EXPORT const char* SDL_ffmpegGetError( void );
 
-EXPORT void SDL_ffmpegClearError();
+EXPORT void SDL_ffmpegClearError( void );
 
 /* SDL_ffmpegFile create / destroy */
 EXPORT SDL_ffmpegFile* SDL_ffmpegOpen( const char* filename );
@@ -243,7 +243,7 @@ EXPORT SDL_ffmpegStream* SDL_ffmpegGetVideoStream( SDL_ffmpegFile *file, uint32_
 EXPORT int SDL_ffmpegSelectVideoStream( SDL_ffmpegFile* file, int videoID);
 
 /* video frame */
-EXPORT SDL_ffmpegVideoFrame* SDL_ffmpegCreateVideoFrame();
+EXPORT SDL_ffmpegVideoFrame* SDL_ffmpegCreateVideoFrame( void );
 
 EXPORT int SDL_ffmpegAddVideoFrame( SDL_ffmpegFile *file, SDL_Surface *frame );
 
@@ -287,7 +287,7 @@ EXPORT uint64_t SDL_ffmpegAudioDuration( SDL_ffmpegFile *file );
 /** \cond */
 
 /* these functions are not public */
-EXPORT SDL_ffmpegFile* SDL_ffmpegCreateFile();
+EXPORT SDL_ffmpegFile* SDL_ffmpegCreateFile( void );
 
 EXPORT int SDL_ffmpegFlush( SDL_ffmpegFile *file );
 
